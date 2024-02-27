@@ -235,6 +235,17 @@ html{
     button {
       color: #fff;
     }
+    .inputan{
+      width: 50vh;
+      background-color: aliceblue;
+      box-shadow:0px 34px 100px rgba(0, 0, 0, 0.4), inset 0 0 0 1000px rgba(255, 255, 255, 0.6);
+      size: 10vh;
+      height: 5vh;
+    }
+    .aaa{
+      background-color: #242525;
+      color: wheat;
+    }
 }
 
   
@@ -256,7 +267,7 @@ html{
       background-size: 100%;
     }
   }
-  @media screen and (max-width: 476px) {
+@media screen and (max-width: 476px) {
     .card{
         width: 95%;
         background: none;
@@ -344,18 +355,21 @@ html{
     justify-content: center;
     align-items: center;
   }
+  .inputan{
+    width: 30vh;
+    background-color: aliceblue;
+    box-shadow:0px 45px 100px rgba(0, 0, 0, 0.4), inset 0 0 0 1000px rgba(255, 255, 255, 0.6);
+    size: 5vh;
+    height: 2vh;
+  }
+  .aaa{
+    background-color: #242525;
+    color: rgb(255, 255, 255);
+    font-size: 1em;
+  }
 }
 .superscript {
     vertical-align: super; /* Mengatur posisi teks ke atas */
     font-size: smaller; /* Ukuran teks lebih kecil */
   }
-  .inputan{
-    width: 50vh;
-    background-color: aliceblue;
-    box-shadow:0px 45px 100px rgba(0, 0, 0, 0.4), inset 0 0 0 1000px rgba(255, 255, 255, 0.6);
-    size: 10vh;
-    height: 5vh;
-  }
-  .aaa{
-    background-color: #242525;
-  }
+  
