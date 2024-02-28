@@ -102,6 +102,13 @@ html{
     cursor: pointer;
     width: 100%;
 }
+.fontsizz{
+  font-size: 100em;
+  margin-top: 50vh;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 
 .btn :hover{
     background-color: rgb(229, 224, 250);
