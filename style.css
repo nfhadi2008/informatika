@@ -166,11 +166,12 @@ html{
         font-size: 1em;
     }
     #card_container {
-      width: 125vh;
-      height: 60vh;
+      width: 120vh;
+      height: 54vh;
       position: relative;
       top: 10%;
       left: 47%;
+      border-radius: 100%;
       margin: -400px 0 0 -360px;
     }
     #card {
