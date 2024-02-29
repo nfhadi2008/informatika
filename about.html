@@ -34,10 +34,13 @@ crossorigin="anonymous">
     body {
         transition: background-color 0.5s ease;
         font-family: 'Helvetica', Arial, sans-serif;
-        padding: 20px;
-        background-color:#fccf00; /* Set default background color */
-; /* Set default background color */
-        color: #000000; /* Set default text color */
+        padding: 0px;
+        background: url('Flappybird/background-img.png') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        
     }
 
     .toggle-container {
@@ -57,7 +60,15 @@ crossorigin="anonymous">
 
     /* Dark Mode Styles */
     body.dark-mode {
-        background-color: #e62310;
+        transition: background-color 0.5s ease;
+        font-family: 'Helvetica', Arial, sans-serif;
+        padding: 0px;
+        background: url('bgg.jpeg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        
         color: #fff;
     }
 
@@ -80,8 +91,8 @@ crossorigin="anonymous">
                     </a>
                 </li>
                 <li class="li-navbar">
-                    <a href="study.html" class="a-navbar">
-                         STUDY
+                    <a href="play.html" class="a-navbar">
+                        PLAY
                     </a>
                 </li>
                 <li class="li-navbar">
