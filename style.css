@@ -160,7 +160,7 @@ html{
     animation: marquee 20s linear infinite;
   }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 500px) {
     .card{
         width: 40%;
         background: none;
