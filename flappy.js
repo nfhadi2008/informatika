@@ -34,6 +34,31 @@ document.addEventListener('keydown', (e) => {
         play();
     }
 });
+document.addEventListener('touchstart', (e) => {
+    e.preventDefault(); // Menghentikan default behavior dari sentuhan
+    if(game_state != 'Play'){
+        document.querySelectorAll('.pipe_sprite').forEach((e) => {
+            e.remove();
+        });
+        img.style.display = 'block';
+        bird.style.top = '40vh';
+        game_state = 'Play';
+        message.innerHTML = '';
+        score_title.innerHTML = 'Score : ';
+        score_val.innerHTML = '0';
+        message.classList.remove('messageStyle');
+        play();
+    }
+});
+
+document.addEventListener('touchend', (e) => {
+    e.preventDefault(); // Menghentikan default behavior dari sentuhan
+    if(game_state == 'Play'){
+        img.src = 'Bird.png';
+        bird_dy = -7.6;
+    }
+});
+
 
 function play(){
     function move(){
