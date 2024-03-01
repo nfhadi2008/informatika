@@ -1,25 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" onkeypress="jump()">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NaufalHadi</title>
     <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/nfhadi2008/images/master/N-removebg-preview.png">
     <link rel="stylesheet" href="dino.css">
+    <style>
+        body {
+            transition: background-color 0.5s ease;
+            font-family: 'Helvetica', Arial, sans-serif;
+            padding: 0px;
+            background: url('background-img.png') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+    </style>
 </head>
-<style>
-    body {
-        transition: background-color 0.5s ease;
-        font-family: 'Helvetica', Arial, sans-serif;
-        padding: 0px;
-        background: url('background-img.png') no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-        
-    }
-</style>
 <body>
     <div class="box" id="box">
         <div class="score" id="score"> Score : 0</div>
@@ -32,44 +31,9 @@
     </div>
 </body>
 <script>
-    const char = document.getElementById("dino")
-    const cactus= document.getElementById("cactus")
-    const playerScore = document.getElementById("score")
-
-    let score = 0;
-    let interval = null;
-    let jumlahScore = () =>{
-        score++;
-        playerScore.innerHTML = `Score : ${score}`
-    }
-    function jump(){
-        if(char.classList != "animate"){
-            char.classList.add("animate");
-        }
-        setTimeout(function(){
-            char.classList.remove("animate");
-        },500)
-        let score = 0;
-        interval = setInterval(jumlahScore,100)
-    }
-    const ifHitCactus = setInterval(function(){
-        const charTop = parseInt(window.getComputedStyle(char).getPropertyValue("top"))
-        const cactusLeft = parseInt(window.getComputedStyle(cactus).getPropertyValue("left"))
-
-        if(cactusLeft < 90 && cactusLeft > 0 && charTop >=60){
-            cactus.style.animation = "none"
-            cactus.style.display = "none"
-            if(confirm("Yahhh, dino nya nabrak!!, mau coba lagi??")){
-                window.location.reload()
-            }
-        }
-    })
-    document.addEventListener('touchstart', jump);
-
     const char = document.getElementById("dino");
     const cactus = document.getElementById("cactus");
     const playerScore = document.getElementById("score");
-
     let score = 0;
     let interval = null;
 
@@ -85,20 +49,26 @@
         setTimeout(function () {
             char.classList.remove("animate");
         }, 500);
-        interval = setInterval(jumlahScore, 100);
+        if (!interval) {
+            interval = setInterval(jumlahScore, 100);
+        }
     }
 
     const ifHitCactus = setInterval(function () {
         const charTop = parseInt(window.getComputedStyle(char).getPropertyValue("top"));
         const cactusLeft = parseInt(window.getComputedStyle(cactus).getPropertyValue("left"));
-
         if (cactusLeft < 90 && cactusLeft > 0 && charTop >= 60) {
             cactus.style.animation = "none";
             cactus.style.display = "none";
+            clearInterval(interval); // Clear interval when game ends
             if (confirm("Yahhh, dino nya nabrak!!, mau coba lagi??")) {
                 window.location.reload();
             }
         }
     });
+
+    // Event handling for both keypress and touchstart
+    document.addEventListener('keypress', jump);
+    document.addEventListener('touchstart', jump);
 </script>
 </html>
