@@ -188,10 +188,11 @@ html{
       animation: backAn 50s infinite;
       color: #fff;
       padding: 30px;
-      width: 100%;
+      width: 110%;
       height: 100%;
       position: absolute;
       z-index: 1;
+      border-radius: 1vh;
       /* background: url(https://riverbeats.life/neworleans/wp-content/uploads/2018/07/Atlantis.png)
         100% bottom; */
       background:url(http://riccardotartaglia.it/img/deadpool/back.jpg) 100% bottom;
